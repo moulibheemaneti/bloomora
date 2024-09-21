@@ -41,10 +41,10 @@ const Navbar = () => {
     }, [isMenuOpen]);
 
     return (
-        <nav className="relative bg-[#190F32] flex justify-between items-center p-4 text-white shadow-md h-84">
+        <nav className="relative bg-[#070709] flex justify-between items-center p-4 text-white shadow-md h-84">
             {/* Left side: Logo */}
             <div className="flex items-center">
-                <Image src="/logo.svg" alt="Logo" width={160} height={160} />
+                <Image src="/logo.svg" alt="Logo" width={160} height={40} priority />
             </div>
 
             {/* Center: Nav items for web view */}
@@ -56,17 +56,16 @@ const Navbar = () => {
                 ))}
             </div>
 
-            {/* Right side: Login and Sign Up buttons */}
             <div className="hidden md:flex space-x-4">
-                <button className="px-4 py-2 bg-transparent rounded-lg border border-white text-white  hover:text-black hover:bg-white transition">
+                <button className="px-4 py-2  text-white rounded-sm bg-purple-700 hover:bg-purple-800 transition">
                     Get Quote
                 </button>
             </div>
 
             {/* Mobile View: Login and Menu Icon */}
             <div className="flex md:hidden items-center space-x-4">
-                <button className="px-4 py-2 bg-green-500 rounded-lg text-white hover:bg-green-600 hover:text-white transition">
-                    Signup
+                <button className="px-4 py-2  text-white rounded-sm bg-purple-700 hover:bg-purple-800 transition">
+                    Get Quote
                 </button>
                 <button onClick={toggleMenu} className="text-white text-2xl focus:outline-none hover:text-gray-300">
                     {isMenuOpen ? <FaTimes /> : <FaBars />}
@@ -74,14 +73,14 @@ const Navbar = () => {
             </div>
 
             {/* Background blur when side sheet is open */}
-      {isMenuOpen && (
-        <div className="fixed inset-0 bg-black bg-opacity-50 backdrop-blur-md z-40" onClick={toggleMenu}></div>
-      )}
+            {isMenuOpen && (
+                <div className="fixed inset-0 bg-black bg-opacity-50 backdrop-blur-md z-40" onClick={toggleMenu}></div>
+            )}
 
             {/* Mobile Menu: Side Sheet (opens from right to left) */}
-            <div className={`fixed top-0 z-50 right-0 h-full w-64 bg-white p-8 shadow-lg transform transition-transform duration-300 ${isMenuOpen ? 'translate-x-0' : 'translate-x-full'}`}>
+            <div className={`fixed top-0 z-50 right-0 h-full w-64 bg-[#070709] p-8 shadow-lg transform transition-transform duration-300 ${isMenuOpen ? 'translate-x-0' : 'translate-x-full'}`}>
                 <div className="flex justify-end">
-                    <button onClick={toggleMenu} className="text-gray-600 rounded-lg text-2xl focus:outline-none hover:text-black">
+                    <button onClick={toggleMenu} className="text-white rounded-lg text-2xl focus:outline-none hover:text-gray-300">
                         {isMenuOpen ? <FaTimes /> : <FaBars />}
                     </button>
                 </div>
@@ -89,7 +88,7 @@ const Navbar = () => {
                     <a
                         key={item.name}
                         href={item.href}
-                        className="block text-gray-600 hover:text-black py-2"
+                        className="block text-white hover:text-gray-300 mb-4"
                         onClick={toggleMenu}
                     >
                         {item.name}
