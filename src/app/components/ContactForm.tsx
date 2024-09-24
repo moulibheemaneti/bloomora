@@ -30,7 +30,11 @@ const ContactForm = () => {
             </div>
 
             {/* Right Section - Contact Form */}
-            <div className="bg-[#1E1E20] p-8 rounded-lg shadow-lg border border-purple-500 w-1/2 max-w-lg" style={{minWidth:"510px"}}>
+            <div className="bg-[#1E1E20] p-8 rounded-lg shadow-lg border border-purple-500 w-1/2 max-w-lg" style={{
+                minWidth: "488px",
+                border: '2px solid',
+                borderImage: 'linear-gradient(to bottom, #FF2CDF, #0014FF) 1',
+            }}>
                 <form>
                     <div className="mb-4">
                         <label className="block text-sm font-medium" htmlFor="name">

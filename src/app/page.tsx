@@ -101,15 +101,15 @@ export default function Home() {
       </div>
 
       {/* Save Time & Book your call */}
-      <div className="px-8 md:px-32 py-16 flex gap-16 md:gap-48 justify-between">
+      <div className="px-8 md:px-32 py-16 flex gap-8 flex-col md:flex-row justify-between text-center md:text-left">
         <div>
           <p className="mb-8">Save Time</p>
           <p className="text-lg font-semibold mb-4">Get Rapid Expert Solutions to Accelerate Your Business Growth.</p>
           <p>Focus on what matters while we handle the complexities. Book a quick consultation, and our experts will guide you through the next steps—no hassle, just results.</p>
         </div>
-        <div style={{ minWidth: "30rem" }}>
+        <div className="min-w-[10rem] md:min-w-[25rem] flex flex-col justify-center items-center md:items-start text-nowrap">
           <p className="mb-8">Book Your Expert Call Now</p>
-          <div className="flex gap-4 justify-between p-8 rounded-lg bg-[#1E1E20]" style={{
+          <div className="flex gap-4 p-8 rounded-lg bg-[#1E1E20]" style={{
             border: '2px solid',
             borderImage: 'linear-gradient(to bottom, #FF2CDF, #0014FF) 1',
           }}>
@@ -121,7 +121,7 @@ export default function Home() {
               className="rounded-full"
             />
             <div>
-              <p className="mb-4">Book a 15-Minute Free Call</p>
+              <p className="mb-2 font-bold text-lg">Book a 15-Minute Free Call</p>
               <p className="mb-4">Consultation Call with Shashank</p>
               <button className="px-4 py-2  text-white rounded-sm bg-purple-700 hover:bg-purple-800 transition">Book Call</button>
             </div>
