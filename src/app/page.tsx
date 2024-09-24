@@ -33,7 +33,7 @@ export default function Home() {
   return (
     <div>
       {/* Hero Section */}
-      <div className="px-8 md:px-32 flex items-center justify-center h-screen bg-black text-white">
+      <div className="px-8 md:px-32 flex items-center justify-center h-screen text-white">
         <div className="text-center">
           <h1 className="text-4xl md:text-6xl font-bold">
             Innovative Digital Solutions, Tailored For You
@@ -83,7 +83,7 @@ export default function Home() {
 
               {/* Hover State: Title and Description with Gradient Background */}
               <div className="absolute inset-0 bg-gradient-to-b from-[#FF2CDF] to-[#0014FF] opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col items-center justify-center text-white p-4">
-              <Image
+                <Image
                   src={expertise.iconPath}
                   alt={expertise.title}
                   width={48}
@@ -96,6 +96,35 @@ export default function Home() {
               </div>
             </div>
           ))}
+        </div>
+      </div>
+
+      {/* Save Time & Book your call */}
+      <div className="px-8 md:px-32 py-16 flex gap-16 md:gap-48 justify-between">
+        <div>
+          <p className="mb-8">Save Time</p>
+          <p className="text-lg font-semibold mb-4">Get Rapid Expert Solutions to Accelerate Your Business Growth.</p>
+          <p>Focus on what matters while we handle the complexities. Book a quick consultation, and our experts will guide you through the next steps—no hassle, just results.</p>
+        </div>
+        <div style={{ minWidth: "30rem" }}>
+          <p className="mb-8">Book Your Expert Call Now</p>
+          <div className="flex gap-4 justify-between p-8 rounded-lg bg-[#1E1E20]" style={{
+            border: '2px solid',
+            borderImage: 'linear-gradient(to bottom, #FF2CDF, #0014FF) 1',
+          }}>
+            <Image
+              src="/icons/expertise/seo.svg"
+              alt="Consultation"
+              width={96}
+              height={96}
+              className="rounded-full"
+            />
+            <div>
+              <p className="mb-4">Book a 15-Minute Free Call</p>
+              <p className="mb-4">Consultation Call with Shashank</p>
+              <button className="px-4 py-2  text-white rounded-sm bg-purple-700 hover:bg-purple-800 transition">Book Call</button>
+            </div>
+          </div>
         </div>
       </div>
     </div>
