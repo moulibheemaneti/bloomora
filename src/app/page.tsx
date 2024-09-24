@@ -1,4 +1,5 @@
 import Image from "next/image";
+import ContactForm from "./components/ContactForm";
 
 interface Expertise {
   title: string;
@@ -127,6 +128,9 @@ export default function Home() {
           </div>
         </div>
       </div>
+
+      {/* Contact Us */}
+      <ContactForm />
     </div>
   );
 }
