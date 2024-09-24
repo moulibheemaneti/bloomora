@@ -1,6 +1,6 @@
 import Image from "next/image";
 
-interface Expertise{
+interface Expertise {
   title: string;
   description: string;
   iconPath: string;
@@ -60,15 +60,40 @@ export default function Home() {
         </p>
         <div className="mt-8 flex flex-wrap gap-8 justify-center">
           {ourExpertise.map((expertise, index) => (
-            <div 
-              key={index} 
-              className="bg-[#1E1E20] rounded-lg text-center flex flex-col items-center justify-center gap-4 hover:cursor-pointer hover:scale-105 transition relative overflow-hidden" 
-              style={{ width: '20rem', height: '20rem', border: '2px solid', borderImage: 'linear-gradient(to bottom, #FF2CDF, #0014FF) 1' }}
+            <div
+              key={index}
+              className="group bg-[#1E1E20] rounded-lg text-center flex flex-col items-center justify-center gap-4 hover:cursor-pointer transition relative overflow-hidden hover:scale-105"
+              style={{
+                width: '15rem',
+                height: '15rem',
+                border: '2px solid',
+                borderImage: 'linear-gradient(to bottom, #FF2CDF, #0014FF) 1',
+              }}
             >
-              <div className="absolute inset-0 bg-gradient-to-b from-[#FF2CDF] to-[#0014FF] opacity-0 hover:opacity-100 transition-opacity duration-300"></div>
-              <Image src={expertise.iconPath} alt={expertise.title} width={96} height={96} className="relative z-10" />
-              <h3 className="text-xl font-bold">{expertise.title}</h3>
-              {/* <p className="mt-2">{expertise.description}</p> */}
+              {/* Default State: Icon and Title */}
+              <div className="relative z-10 flex flex-col items-center transition-all duration-300 group-hover:opacity-0">
+                <Image
+                  src={expertise.iconPath}
+                  alt={expertise.title}
+                  width={96}
+                  height={96}
+                />
+                <h3 className="text-xl font-bold mt-2">{expertise.title}</h3>
+              </div>
+
+              {/* Hover State: Title and Description with Gradient Background */}
+              <div className="absolute inset-0 bg-gradient-to-b from-[#FF2CDF] to-[#0014FF] opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col items-center justify-center text-white p-4">
+              <Image
+                  src={expertise.iconPath}
+                  alt={expertise.title}
+                  width={48}
+                  height={48}
+                  className="mb-4"
+                />
+                <h3 className="text-xl font-bold">{expertise.title}</h3>
+                <p className="mt-2 text-sm">{expertise.description}</p>
+                <p className="mt-2 text-sm font-bold">Know More</p>
+              </div>
             </div>
           ))}
         </div>
